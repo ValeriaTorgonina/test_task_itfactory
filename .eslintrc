@@ -1,0 +1,91 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest": true
+  },
+  "plugins": [
+    "eslint-plugin-prefer-arrow"
+  ],
+  "extends": [
+    "react-app",
+    "react-app/jest",
+    "airbnb",
+    "airbnb-typescript",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "consistent-return": ["off"],
+    "import/prefer-default-export": ["off"],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/*test*",
+          "**/*setupTests*",
+          "**/*.stories.*",
+          "**/.storybook/**/*.*"
+        ],
+        "peerDependencies": true
+      }
+    ],
+    "import/order": [
+      "warn",
+      {
+        "groups": ["builtin", "external", "internal", "parent", "sibling"],
+        "pathGroups": [
+          {
+            "pattern": "@angular/*",
+            "group": "builtin",
+            "position": "before"
+          },
+          {
+            "pattern": "@app/**",
+            "group": "internal",
+            "position": "before"
+          },
+          {
+            "pattern": "./*.scss",
+            "group": "sibling",
+            "position": "after"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": [],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": false
+        }
+      }
+    ],
+    "prefer-arrow/prefer-arrow-functions": [
+      "warn",
+      {
+        "allowStandaloneDeclarations": true
+      }
+    ],
+    "react/function-component-definition": ["off"],
+    "react/require-default-props": ["off"],
+    "react/no-array-index-key": ["off"],
+    "@typescript-eslint/no-unused-vars": ["warn"],
+    "jsx-a11y/label-has-associated-control": ["off"]
+  },
+  "overrides": [
+    {
+      "files": ["*.stories.*"],
+      "rules": {
+        "react/jsx-props-no-spreading": ["off"],
+        "react/function-component-definition": ["off"],
+        "react/destructuring-assignment": ["off"]
+      }
+    }
+  ]
+}
