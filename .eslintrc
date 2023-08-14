@@ -24,6 +24,7 @@
     "project": "./tsconfig.json"
   },
   "rules": {
+    "react/react-in-jsx-scope": "off",
     "consistent-return": ["off"],
     "import/prefer-default-export": ["off"],
     "import/no-extraneous-dependencies": [
@@ -85,6 +86,12 @@
         "react/jsx-props-no-spreading": ["off"],
         "react/function-component-definition": ["off"],
         "react/destructuring-assignment": ["off"]
+      }
+    },
+    {
+      "files": ["./src/store/**/slice.ts"],
+      "rules": {
+        "no-param-reassign": ["off"]
       }
     }
   ]

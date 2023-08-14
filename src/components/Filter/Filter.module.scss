@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: white;
+  max-width: 600px;
+  width: 100%;
+}
+
+.search {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.labelText {
+  color: white;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.selectWrapper {
+  width: 49%;
+
+  @media (max-width: 450px) {
+    width: 100%;
+  }
+}
+
+.select {
+  background-color: white;
+  margin-bottom: 20px;
+  width: 100%;
+}

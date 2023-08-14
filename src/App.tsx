@@ -1,9 +1,8 @@
 import React from 'react';
+import BooksPage from './pages/BooksPage';
 
 function App() {
-  return (
-    <div className="App"/>
-  );
+  return <BooksPage />;
 }
 
 export default App;
