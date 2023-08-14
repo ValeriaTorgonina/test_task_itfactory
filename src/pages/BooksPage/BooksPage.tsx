@@ -1,7 +1,7 @@
 import CloseIcon from '@mui/icons-material/Close';
 import { Alert, Button, IconButton } from '@mui/material';
 import { useEffect, useMemo, useState } from 'react';
-import BookCard from '../../components/BookCard';
+import Card from '../../components/Card';
 import Filter from '../../components/Filter';
 import { useAppDispatch, useAppSelector } from '../../store';
 import { selectBooksState } from '../../store/booksSlice/selectors';
@@ -56,7 +56,7 @@ export function BooksPage() {
         <span className={styles.headText}>{headText}</span>
         <div className={styles.list}>
           {books.map((book) => (
-            <BookCard data={book} key={book.id} />
+            <Card data={book} key={book.id} />
           ))}
         </div>
         {(!totalItems || totalItems > books.length) && !!books.length && (

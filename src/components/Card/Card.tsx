@@ -1,12 +1,12 @@
 import defaultBookCover from '../../assets/no_cover.jpeg';
 import { Book } from '../../store/booksSlice/types';
-import styles from './BookCard.module.scss';
+import styles from './Card.module.scss';
 
 type BookCardProps = {
   data: Book;
 };
 
-export function BookCard({ data }: BookCardProps) {
+export function Card({ data }: BookCardProps) {
   const authors = data.authors?.join(', ');
 
   return (
@@ -22,8 +22,12 @@ export function BookCard({ data }: BookCardProps) {
             <span className={styles.category}>{data.categories[0] ?? ''}</span>
           )}
         </div>
-        <span className={styles.title}>{data.title ?? ''}</span>
-        <span className={styles.authors}>{authors}</span>
+        <span className={styles.title} title={data.title}>
+          {data.title ?? ''}
+        </span>
+        <span className={styles.authors} title={authors}>
+          {authors}
+        </span>
       </div>
     </div>
   );
